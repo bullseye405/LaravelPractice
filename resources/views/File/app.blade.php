@@ -8,7 +8,7 @@
                 <div class="card-header">File Upload</div>
                 <div class="card-body">
 
-                <form method="POST" action="{{ route('upload') }}" enctype="multipart/form-data" aria-label="{{ __('Upload') }} ">
+                <form method="POST" action="{{ route('upload') }}" aria-label="{{ __('Upload') }}">
                         @csrf
                         <div class="form-group row">
                             <label for="title" class="col-sm-4 col-form-label text-md-right">{{ __('Title') }}</label>
@@ -46,9 +46,6 @@
                                 @endif
                             </div>
                         </div>
-                        
-                        {{ Form::file('file') }}
-
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
@@ -57,16 +54,9 @@
                             </div>
                         </div>
                     </form>
-                    @if(session()->get('message'))
-                        <div class="alert alert-success">
-                        {{ session()->get('message') }}
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
     </div>
 </div>
-@include('tasks.index')
 @endsection
-

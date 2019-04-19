@@ -40,4 +40,14 @@ class User extends Authenticatable
     public function tasks(){
         return $this->hasMany(Task::class);
     }
+
+    public function files()
+    {
+        return $this->hasMany(File::class);
+    }
+
+    public function uploads()
+    {
+        return $this->hasMany(Upload::class);
+    }               
 }

@@ -23,7 +23,7 @@ class TaskController extends Controller
         //     'tasks' => $this->$tasks->forUser($request->user()),
         // ]);
 
-        return view('tasks.index');
+        return view('home');
     }
 
     public function store(Request $request){
@@ -34,9 +34,10 @@ class TaskController extends Controller
         
             $request->user()->tasks()->create([
                 'name' => $request->name,
+                'progress' => $request->progress
             ]);
         
-            return redirect('/tasks');
+            return redirect('/');
     }
 
     public function destroy($id){

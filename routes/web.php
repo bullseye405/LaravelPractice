@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Redirect;
 |
 */
 
-Route::get('/test', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -36,7 +36,7 @@ Route::get('/test', function () {
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+
 
 
 //Tasks routes
@@ -45,3 +45,9 @@ Route::get('/','TaskController@index');
 Route::post('/task', 'TaskController@store');
 
 Route::delete('/task/{id}', 'TaskController@destroy');
+
+Route::get('/file', 'FileController@index');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/upload', 'FileController@upload')->name('upload');
